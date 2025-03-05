@@ -58,7 +58,7 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
   const { current, location } = city.weatherData;
 
   return (
-    <div className={`bg-white rounded-lg shadow-md p-6 border-2 ${city.isPinned ? 'border-yellow-400' : 'border-transparent'}`}>
+    <div className={`bg-white rounded-lg shadow-md p-6 border-2 h-full flex flex-col ${city.isPinned ? 'border-yellow-400' : 'border-transparent'}`}>
       <div className="flex justify-between items-center mb-4">
         <div>
           <h2 className="text-xl font-semibold">{location.name}</h2>
@@ -92,7 +92,7 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
         <img src={current.condition.icon} alt={current.condition.text} className="w-16 h-16" />
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-4 mb-6">
         <div>
           <p className="text-gray-600">Humidity</p>
           <p className="font-semibold">{current.humidity}%</p>
@@ -112,7 +112,7 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
       </div>
 
       {/* 5-Day Forecast */}
-      <div className="mt-6 border-t pt-4">
+      <div className="mt-auto border-t pt-4">
         <h3 className="text-lg font-semibold mb-4">5-Day Forecast</h3>
         <div className="grid grid-cols-5 gap-2">
           {city.weatherData?.forecast.forecastday.map((day, index) => (
