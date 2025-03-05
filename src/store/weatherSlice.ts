@@ -52,6 +52,14 @@ const weatherSlice = createSlice({
     setError: (state, action: PayloadAction<string | null>) => {
       state.error = action.payload;
     },
+    reorderCities: (state, action: PayloadAction<{ sourceIndex: number; destinationIndex: number }>) => {
+      const { sourceIndex, destinationIndex } = action.payload;
+      const [removed] = state.cities.splice(sourceIndex, 1);
+      state.cities.splice(destinationIndex, 0, removed);
+    },
+    setInitialState: (state, action: PayloadAction<WeatherState>) => {
+      return action.payload;
+    },
   },
 });
 
@@ -63,6 +71,8 @@ export const {
   setCityError,
   setLoading,
   setError,
+  reorderCities,
+  setInitialState,
 } = weatherSlice.actions;
 
 export default weatherSlice.reducer; 
