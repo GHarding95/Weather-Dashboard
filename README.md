@@ -42,4 +42,4 @@ A modern, responsive weather dashboard built with Next.js and TypeScript. Users 
 
 ## Testing
 
-Run the test suite with npm test
+Run the test suite with npm test 
