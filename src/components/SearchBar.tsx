@@ -1,33 +1,22 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addCity } from '../store/weatherSlice';
 import { toast } from 'react-hot-toast';
-import { RootState } from '../store/store';
+import axios from 'axios';
 
 const SearchBar: React.FC = () => {
   const [cityName, setCityName] = useState('');
   const dispatch = useDispatch();
-  const cities = useSelector((state: RootState) => state.weather.cities);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (cityName.trim()) {
-      // Check for duplicate cities
-      const isDuplicate = cities.some(city => 
-        city.name.toLowerCase() === cityName.trim().toLowerCase()
-      );
-
-      if (isDuplicate) {
-        toast.error('This city is already added to your dashboard.');
-        return;
-      }
-
       try {
-        const response = await fetch(
+        const response = await axios.get(
           `http://api.weatherapi.com/v1/current.json?key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=${cityName.trim()}`
         );
         
-        if (!response.ok) {
+        if (!response.data) {
           toast.error('City not found. Please try a valid city name.');
           return;
         }
@@ -41,7 +30,7 @@ const SearchBar: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto mb-8">
+    <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto mb-8" role="form">
       <div className="flex gap-2">
         <input
           type="text"

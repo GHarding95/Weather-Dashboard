@@ -14,7 +14,7 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
 
   if (loading) {
     return (
-      <div className="bg-white rounded-lg shadow-md p-6 animate-pulse">
+      <div className="bg-white rounded-lg shadow-md p-6 animate-pulse" data-testid="loading-skeleton">
         <div className="h-4 bg-gray-200 rounded w-3/4 mb-4"></div>
         <div className="h-4 bg-gray-200 rounded w-1/2"></div>
         <div className="h-4 bg-gray-200 rounded w-2/3"></div>
@@ -31,6 +31,7 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
             <button
               onClick={() => dispatch(togglePinCity(city.name))}
               className={`p-2 rounded-full cursor-pointer ${city.isPinned ? 'text-yellow-500' : 'text-gray-400'}`}
+              aria-label={city.isPinned ? "Unpin city" : "Pin city"}
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
@@ -39,6 +40,7 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
             <button
               onClick={() => dispatch(removeCity(city.name))}
               className="p-2 text-red-500 hover:text-red-700 rounded-full cursor-pointer"
+              aria-label="Remove city"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -68,6 +70,7 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
           <button
             onClick={() => dispatch(togglePinCity(city.name))}
             className={`p-2 rounded-full cursor-pointer ${city.isPinned ? 'text-yellow-500' : 'text-gray-400'}`}
+            aria-label={city.isPinned ? "Unpin city" : "Pin city"}
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
               <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
@@ -76,6 +79,7 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
           <button
             onClick={() => dispatch(removeCity(city.name))}
             className="p-2 text-red-500 hover:text-red-700 rounded-full cursor-pointer"
+            aria-label="Remove city"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />

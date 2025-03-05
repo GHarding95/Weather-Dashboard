@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.0",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@testing-library/dom": "^10.4.0",
     "@types/jest": "^29.5.14",
     "@types/node": "^20",
     "@types/react": "^19",
