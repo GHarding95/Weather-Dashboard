@@ -37,10 +37,8 @@ A modern, responsive weather dashboard built with Next.js and TypeScript. Users 
 
 1. Clone the repository
 2. Install dependencies with npm install
-3. Create a `.env.local` file in the root directory and add your weather API key:
-   WEATHER_API_KEY=your_api_key_here (or just use mine I've left it in)
-4. Start the development server with npm run dev
-5. Open http://localhost:3000 in your browser to see the application
+3. Start the development server with npm run dev
+4. Open http://localhost:3000 in your browser to see the application
 
 ## Testing
 
