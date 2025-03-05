@@ -58,7 +58,7 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
   const { current, location } = city.weatherData;
 
   return (
-    <div className={`bg-white rounded-lg shadow-md p-6 ${city.isPinned ? 'border-2 border-yellow-400' : ''}`}>
+    <div className={`bg-white rounded-lg shadow-md p-6 border-2 ${city.isPinned ? 'border-yellow-400' : 'border-transparent'}`}>
       <div className="flex justify-between items-center mb-4">
         <div>
           <h2 className="text-xl font-semibold">{location.name}</h2>
