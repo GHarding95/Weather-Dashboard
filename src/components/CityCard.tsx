@@ -30,7 +30,7 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
           <div className="flex gap-2">
             <button
               onClick={() => dispatch(togglePinCity(city.name))}
-              className={`p-2 rounded-full ${city.isPinned ? 'text-yellow-500' : 'text-gray-400'}`}
+              className={`p-2 rounded-full cursor-pointer ${city.isPinned ? 'text-yellow-500' : 'text-gray-400'}`}
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
@@ -38,7 +38,7 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
             </button>
             <button
               onClick={() => dispatch(removeCity(city.name))}
-              className="p-2 text-red-500 hover:text-red-700 rounded-full"
+              className="p-2 text-red-500 hover:text-red-700 rounded-full cursor-pointer"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -58,7 +58,7 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
   const { current, location } = city.weatherData;
 
   return (
-    <div className={`bg-white rounded-lg shadow-md p-6 cursor-pointer ${city.isPinned ? 'border-2 border-yellow-400' : ''}`}>
+    <div className={`bg-white rounded-lg shadow-md p-6 ${city.isPinned ? 'border-2 border-yellow-400' : ''}`}>
       <div className="flex justify-between items-center mb-4">
         <div>
           <h2 className="text-xl font-semibold">{location.name}</h2>
@@ -67,7 +67,7 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
         <div className="flex gap-2">
           <button
             onClick={() => dispatch(togglePinCity(city.name))}
-            className={`p-2 rounded-full ${city.isPinned ? 'text-yellow-500' : 'text-gray-400'}`}
+            className={`p-2 rounded-full cursor-pointer ${city.isPinned ? 'text-yellow-500' : 'text-gray-400'}`}
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
               <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
@@ -75,7 +75,7 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
           </button>
           <button
             onClick={() => dispatch(removeCity(city.name))}
-            className="p-2 text-red-500 hover:text-red-700 rounded-full"
+            className="p-2 text-red-500 hover:text-red-700 rounded-full cursor-pointer"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
