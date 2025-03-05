@@ -110,6 +110,28 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
           <p className="font-semibold">{current.pressure_mb} mb</p>
         </div>
       </div>
+
+      {/* 5-Day Forecast */}
+      <div className="mt-6 border-t pt-4">
+        <h3 className="text-lg font-semibold mb-4">5-Day Forecast</h3>
+        <div className="grid grid-cols-5 gap-2">
+          {city.weatherData?.forecast.forecastday.map((day, index) => (
+            <div key={index} className="text-center">
+              <p className="text-sm text-gray-600 mb-1">
+                {new Date(day.date).toLocaleDateString('en-US', { weekday: 'short' })}
+              </p>
+              <img 
+                src={day.day.condition.icon} 
+                alt={day.day.condition.text} 
+                className="w-8 h-8 mx-auto mb-1"
+              />
+              <p className="text-sm font-semibold">
+                {Math.round(day.day.avgtemp_c)}°C
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
