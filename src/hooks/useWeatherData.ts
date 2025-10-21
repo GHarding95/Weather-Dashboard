@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { WeatherData } from '../types/weather';
 import { useDispatch } from 'react-redux';
 import { updateCityWeather, setCityError } from '../store/weatherSlice';
 

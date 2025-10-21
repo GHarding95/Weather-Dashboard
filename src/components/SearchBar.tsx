@@ -23,7 +23,7 @@ const SearchBar: React.FC = () => {
         
         dispatch(addCity(cityName.trim()));
         setCityName('');
-      } catch (error) {
+      } catch {
         toast.error('Error searching for city. Please try again.');
       }
     }

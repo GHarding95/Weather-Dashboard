@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { useDispatch } from 'react-redux';
 import { City } from '../types/weather';
 import { removeCity, togglePinCity } from '../store/weatherSlice';
@@ -93,7 +94,13 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
           <p className="text-4xl font-bold">{current.temp_c}°C</p>
           <p className="text-gray-600">{current.condition.text}</p>
         </div>
-        <img src={current.condition.icon} alt={current.condition.text} className="w-16 h-16" />
+        <Image 
+          src={current.condition.icon} 
+          alt={current.condition.text} 
+          width={64} 
+          height={64}
+          className="w-16 h-16"
+        />
       </div>
 
       <div className="grid grid-cols-2 gap-4 mb-6">
@@ -124,9 +131,11 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
               <p className="text-sm text-gray-600 mb-1">
                 {new Date(day.date).toLocaleDateString('en-US', { weekday: 'short' })}
               </p>
-              <img 
+              <Image 
                 src={day.day.condition.icon} 
                 alt={day.day.condition.text} 
+                width={32}
+                height={32}
                 className="w-8 h-8 mx-auto mb-1"
               />
               <p className="text-sm font-semibold">
