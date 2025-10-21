@@ -17,19 +17,20 @@ const WeatherDashboard: React.FC = () => {
   const dispatch = useDispatch();
   const [savedCities, setSavedCities] = useLocalStorage<City[]>('weatherCities', []);
 
-  // Load saved cities on mount
+
+  // Load saved cities on mount only
   React.useEffect(() => {
     if (savedCities.length > 0 && cities.length === 0) {
       dispatch(setInitialState({ cities: savedCities, loading: false, error: null }));
     }
-  }, [dispatch, savedCities, cities.length]);
+  }, []); // Only run on mount
 
-  // Save cities when they change
+  // Save cities when they change (but not on initial load)
   React.useEffect(() => {
-    if (cities.length > 0) {
+    if (cities.length > 0 || savedCities.length > 0) {
       setSavedCities(cities);
     }
-  }, [cities, setSavedCities]);
+  }, [cities, setSavedCities, savedCities.length]);
 
   return (
     <div className="min-h-screen bg-gray-100 py-8 px-4">

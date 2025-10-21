@@ -13,7 +13,7 @@ const SearchBar: React.FC = () => {
     if (cityName.trim()) {
       try {
         const response = await axios.get(
-          `http://api.weatherapi.com/v1/current.json?key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=${cityName.trim()}`
+          `https://api.weatherapi.com/v1/current.json?key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=${cityName.trim()}`
         );
         
         if (!response.data) {
