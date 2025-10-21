@@ -95,7 +95,7 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
           <p className="text-gray-600">{current.condition.text}</p>
         </div>
         <Image 
-          src={current.condition.icon} 
+          src={current.condition.icon.startsWith('//') ? `https:${current.condition.icon}` : current.condition.icon} 
           alt={current.condition.text} 
           width={64} 
           height={64}
@@ -132,7 +132,7 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
                 {new Date(day.date).toLocaleDateString('en-US', { weekday: 'short' })}
               </p>
               <Image 
-                src={day.day.condition.icon} 
+                src={day.day.condition.icon.startsWith('//') ? `https:${day.day.condition.icon}` : day.day.condition.icon} 
                 alt={day.day.condition.text} 
                 width={32}
                 height={32}
