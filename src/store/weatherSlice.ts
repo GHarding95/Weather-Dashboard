@@ -22,7 +22,7 @@ const weatherSlice = createSlice({
         name: action.payload,
         isPinned: false,
       };
-      state.cities.push(newCity);
+      state.cities.unshift(newCity);
     },
     removeCity: (state, action: PayloadAction<string>) => {
       state.cities = state.cities.filter(city => city.name !== action.payload);

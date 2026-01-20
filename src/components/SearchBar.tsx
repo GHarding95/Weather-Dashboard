@@ -30,18 +30,18 @@ const SearchBar: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto mb-8" role="form">
-      <div className="flex gap-2">
+    <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto mb-8 px-2 sm:px-0" role="form">
+      <div className="flex flex-col min-[375px]:flex-row gap-2">
         <input
           type="text"
           value={cityName}
           onChange={(e) => setCityName(e.target.value)}
           placeholder="Enter city name..."
-          className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="w-full min-[375px]:flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
         <button
           type="submit"
-          className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer"
+          className="w-full min-[375px]:w-auto px-3 py-2 min-[375px]:px-6 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer text-sm sm:text-base whitespace-nowrap"
         >
           Add City
         </button>
