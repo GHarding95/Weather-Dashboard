@@ -52,7 +52,7 @@ describe('SearchBar', () => {
           temp_c: 20,
           condition: {
             text: 'Sunny',
-            icon: 'test-icon.png',
+            icon: 'https://cdn.weatherapi.com/weather/64x64/day/113.png',
           },
         },
       },

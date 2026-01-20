@@ -26,7 +26,7 @@ const mockWeatherData: WeatherData = {
     temp_f: 68,
     condition: {
       text: 'Sunny',
-      icon: 'test-icon.png',
+      icon: 'https://cdn.weatherapi.com/weather/64x64/day/113.png',
     },
     humidity: 65,
     wind_kph: 10,
@@ -49,7 +49,7 @@ const mockWeatherData: WeatherData = {
           avghumidity: 60,
           condition: {
             text: 'Partly cloudy',
-            icon: 'test-icon.png',
+            icon: 'https://cdn.weatherapi.com/weather/64x64/day/116.png',
           },
         },
         hour: [
@@ -58,7 +58,7 @@ const mockWeatherData: WeatherData = {
             temp_c: 20,
             condition: {
               text: 'Sunny',
-              icon: 'test-icon.png',
+              icon: 'https://cdn.weatherapi.com/weather/64x64/day/113.png',
             },
             humidity: 65,
             wind_kph: 10,
